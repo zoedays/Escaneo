@@ -1,5 +1,5 @@
 FROM tomcat:9.0-jdk17-temurin
 
-COPY dist/ROOT.war /usr/local/tomcat/webapps/ROOT.war
+COPY dist/Escaneo.war /usr/local/tomcat/webapps/Escaneo.war
 
 EXPOSE 8080
