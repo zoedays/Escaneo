@@ -10,14 +10,22 @@ public class Acceso {
         Connection cn;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/final", "root", "");
-        } catch (ClassNotFoundException e) {
-            cn = null;
+            String url = "jdbc:mysql://bspupdjree1hm2yg9arj-mysql.services.clever-cloud.com:3306/bspupdjree1hm2yg9arj?useSSL=true&requireSSL=true";
+            String user = "ufz4rrgmwskemty2";
+            String password = "ohsg5IiySrtz8ONrJiHU";
+    
+         Class.forName("com.mysql.cj.jdbc.Driver");
+            cn = DriverManager.getConnection(url, user, password);
+            System.out.println("Conexión exitosa");
+       } catch (ClassNotFoundException e) {
+            System.err.println("Driver JDBC no encontrado: " + e.getMessage());
         } catch (SQLException e) {
-            cn = null;
+            System.err.println("Error SQL al conectar: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Error general: " + e.getMessage());
         }
-        return cn;
-    }
+    return cn;
+}
 
     public static String ejecutar(String sql) {
         String msg = null;
