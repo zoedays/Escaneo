@@ -7,7 +7,7 @@ import java.util.List;
 public class Acceso {
 
     public static Connection getConexion() {
-        Connection cn;
+        Connection cn = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://bspupdjree1hm2yg9arj-mysql.services.clever-cloud.com:3306/bspupdjree1hm2yg9arj?useSSL=true&requireSSL=true";
